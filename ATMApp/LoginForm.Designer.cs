@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "LoginForm";
+            txtCardNumber = new TextBox();
+            txtPin = new TextBox();
+            btnLogin = new Button();
+            SuspendLayout();
+            // 
+            // txtCardNumber
+            // 
+            txtCardNumber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCardNumber.Location = new Point(46, 142);
+            txtCardNumber.Name = "txtCardNumber";
+            txtCardNumber.Size = new Size(355, 30);
+            txtCardNumber.TabIndex = 0;
+            // 
+            // txtPin
+            // 
+            txtPin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPin.Location = new Point(46, 203);
+            txtPin.Name = "txtPin";
+            txtPin.PasswordChar = '*';
+            txtPin.Size = new Size(355, 30);
+            txtPin.TabIndex = 1;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnLogin.Location = new Point(186, 272);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(93, 32);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            // 
+            // LoginForm
+            // 
+            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(447, 453);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPin);
+            Controls.Add(txtCardNumber);
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LoginForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtCardNumber;
+        private TextBox txtPin;
+        private Button btnLogin;
     }
 }
