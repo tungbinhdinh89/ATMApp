@@ -24,7 +24,7 @@ namespace ATMApp
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-
+            new WithdrawForm().ShowDialog();
         }
 
         private void btnShowTransactions_Click(object sender, EventArgs e)
