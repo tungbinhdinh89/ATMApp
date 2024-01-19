@@ -16,5 +16,20 @@ namespace ATMApp
         {
             InitializeComponent();
         }
+
+        private void btnViewBalance_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Your balance is 5000$", "Balance", MessageBoxButtons.OK);
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShowTransactions_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
