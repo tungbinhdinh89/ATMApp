@@ -28,12 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DashboardForm";
+            btnViewBalance = new Button();
+            btnWithdraw = new Button();
+            btnShowTransactions = new Button();
+            lblUserName = new Label();
+            SuspendLayout();
+            // 
+            // btnViewBalance
+            // 
+            btnViewBalance.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnViewBalance.Location = new Point(53, 118);
+            btnViewBalance.Name = "btnViewBalance";
+            btnViewBalance.Size = new Size(324, 32);
+            btnViewBalance.TabIndex = 0;
+            btnViewBalance.Text = "View Balance";
+            btnViewBalance.UseVisualStyleBackColor = true;
+            // 
+            // btnWithdraw
+            // 
+            btnWithdraw.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnWithdraw.Location = new Point(53, 203);
+            btnWithdraw.Name = "btnWithdraw";
+            btnWithdraw.Size = new Size(324, 32);
+            btnWithdraw.TabIndex = 1;
+            btnWithdraw.Text = "Withdraw";
+            btnWithdraw.UseVisualStyleBackColor = true;
+            // 
+            // btnShowTransactions
+            // 
+            btnShowTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnShowTransactions.Location = new Point(53, 290);
+            btnShowTransactions.Name = "btnShowTransactions";
+            btnShowTransactions.Size = new Size(324, 32);
+            btnShowTransactions.TabIndex = 2;
+            btnShowTransactions.Text = "Show last 5 transactions";
+            btnShowTransactions.UseVisualStyleBackColor = true;
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Location = new Point(22, 21);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new Size(31, 23);
+            lblUserName.TabIndex = 3;
+            lblUserName.Text = "Hi!";
+            // 
+            // DashboardForm
+            // 
+            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(478, 450);
+            Controls.Add(lblUserName);
+            Controls.Add(btnShowTransactions);
+            Controls.Add(btnWithdraw);
+            Controls.Add(btnViewBalance);
+            Name = "DashboardForm";
+            Text = "Dashboard | ATM version 1.0";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button btnViewBalance;
+        private Button btnWithdraw;
+        private Button btnShowTransactions;
+        private Label lblUserName;
     }
 }
