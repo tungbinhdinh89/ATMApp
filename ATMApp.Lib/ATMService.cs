@@ -13,6 +13,16 @@ namespace ATMApp.Lib
         private List<Account> accounts = [];
         private Account? currentAccount = null;
 
+        public string GetCurrentAccountName()
+        {
+            return currentAccount?.FullName ?? "";
+        }
+
+        public int GetCurrentBalance()
+        {
+            return currentAccount!.Balance ;
+        }
+
         public async Task LoadAccountsAsync(string path)
         {
             ArgumentNullException.ThrowIfNullOrWhiteSpace(path);
@@ -28,7 +38,7 @@ namespace ATMApp.Lib
 
         public bool Login(string cardNumber, int pin)
         {
-            currentAccount = accounts.SingleOrDefault(x => x.AccountNumber == cardNumber && x.Pin == pin);
+            currentAccount = accounts.SingleOrDefault(x => x.CardNumber == cardNumber && x.Pin == pin);
             return currentAccount != null;
         }
     }

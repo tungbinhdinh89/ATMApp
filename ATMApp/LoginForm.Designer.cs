@@ -31,6 +31,7 @@
             txtCardNumber = new TextBox();
             txtPin = new TextBox();
             btnLogin = new Button();
+            lblError = new Label();
             SuspendLayout();
             // 
             // txtCardNumber
@@ -61,11 +62,22 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.ForeColor = Color.DarkRed;
+            lblError.Location = new Point(46, 246);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(47, 23);
+            lblError.TabIndex = 3;
+            lblError.Text = "error";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(447, 453);
+            Controls.Add(lblError);
             Controls.Add(btnLogin);
             Controls.Add(txtPin);
             Controls.Add(txtCardNumber);
@@ -82,5 +94,6 @@
         private TextBox txtCardNumber;
         private TextBox txtPin;
         private Button btnLogin;
+        private Label lblError;
     }
 }

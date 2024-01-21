@@ -19,6 +19,7 @@ namespace ATMApp
         {
             InitializeComponent();
             btnLogin.Enabled = false;
+            lblError.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,16 +40,19 @@ namespace ATMApp
             var valid = atmService.Login(cardNumber, pinNumber);
             if (!valid)
             {
+                this.lblError.Text = "Card number or pin is invalid!";
+                lblError.Show();
                 return;
             }
 
             Hide();
-            new DashboardForm().ShowDialog();
+            new DashboardForm(atmService).ShowDialog();
         }
 
         private async void  LoginForm_Load(object sender, EventArgs e)
         {
            await atmService.LoadAccountsAsync("bank.json");
+          
             btnLogin.Enabled = true;
         }
     }

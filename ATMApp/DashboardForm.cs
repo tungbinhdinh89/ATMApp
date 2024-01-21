@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATMApp.Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,18 @@ namespace ATMApp
 {
     public partial class DashboardForm : Form
     {
-        public DashboardForm()
+        private readonly ATMService atmService;
+
+        public DashboardForm(ATMService atmService)
         {
+            this.atmService = atmService;
+
             InitializeComponent();
         }
 
         private void btnViewBalance_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Your balance is 5000$", "Balance", MessageBoxButtons.OK);
+            MessageBox.Show($"Your balance is {atmService.GetCurrentBalance()}$", "Balance", MessageBoxButtons.OK);
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
@@ -30,6 +35,16 @@ namespace ATMApp
         private void btnShowTransactions_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            if (atmService is null)
+            {
+                throw new ArgumentException(nameof(atmService));
+            }
+
+            this.lblUserName.Text = $"Hi, {atmService.GetCurrentAccountName()}";
         }
     }
 }

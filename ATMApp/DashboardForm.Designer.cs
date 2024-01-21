@@ -87,6 +87,7 @@
             Controls.Add(btnViewBalance);
             Name = "DashboardForm";
             Text = "Dashboard | ATM version 1.0";
+            Load += DashboardForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
