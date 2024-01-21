@@ -46,5 +46,10 @@ namespace ATMApp
 
             this.lblUserName.Text = $"Hi, {atmService.GetCurrentAccountName()}";
         }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

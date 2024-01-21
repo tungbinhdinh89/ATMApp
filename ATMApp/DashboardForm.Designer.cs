@@ -32,6 +32,7 @@
             btnWithdraw = new Button();
             btnShowTransactions = new Button();
             lblUserName = new Label();
+            btnDeposit = new Button();
             SuspendLayout();
             // 
             // btnViewBalance
@@ -48,7 +49,7 @@
             // btnWithdraw
             // 
             btnWithdraw.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnWithdraw.Location = new Point(53, 203);
+            btnWithdraw.Location = new Point(53, 187);
             btnWithdraw.Name = "btnWithdraw";
             btnWithdraw.Size = new Size(324, 32);
             btnWithdraw.TabIndex = 1;
@@ -59,7 +60,7 @@
             // btnShowTransactions
             // 
             btnShowTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnShowTransactions.Location = new Point(53, 290);
+            btnShowTransactions.Location = new Point(53, 321);
             btnShowTransactions.Name = "btnShowTransactions";
             btnShowTransactions.Size = new Size(324, 32);
             btnShowTransactions.TabIndex = 2;
@@ -76,11 +77,23 @@
             lblUserName.TabIndex = 3;
             lblUserName.Text = "Hi!";
             // 
+            // btnDeposit
+            // 
+            btnDeposit.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnDeposit.Location = new Point(53, 254);
+            btnDeposit.Name = "btnDeposit";
+            btnDeposit.Size = new Size(324, 32);
+            btnDeposit.TabIndex = 4;
+            btnDeposit.Text = "Deposit";
+            btnDeposit.UseVisualStyleBackColor = true;
+            btnDeposit.Click += btnDeposit_Click;
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 450);
+            Controls.Add(btnDeposit);
             Controls.Add(lblUserName);
             Controls.Add(btnShowTransactions);
             Controls.Add(btnWithdraw);
@@ -99,5 +112,6 @@
         private Button btnWithdraw;
         private Button btnShowTransactions;
         private Label lblUserName;
+        private Button btnDeposit;
     }
 }

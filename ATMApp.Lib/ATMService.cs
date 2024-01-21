@@ -65,7 +65,8 @@ namespace ATMApp.Lib
             currentAccount.Transactions.Add(new AccountTransaction
             {
                 TransactionDate = DateTime.Now,
-                Amount = amount
+                Amount = amount,
+                Type = "Withdraw"
             }) ;
             return true;
         }
