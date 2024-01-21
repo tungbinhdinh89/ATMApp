@@ -51,7 +51,7 @@ namespace ATMApp
 
         private async void  LoginForm_Load(object sender, EventArgs e)
         {
-           await atmService.LoadAccountsAsync("bank.json");
+           await atmService.LoadAccountsAsync(Constants.BANK_PATH);
           
             btnLogin.Enabled = true;
         }

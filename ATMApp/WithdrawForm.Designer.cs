@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtAmount = new TextBox();
             label1 = new Label();
             lblError = new Label();
             btnCancel = new Button();
             btnAccept = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtAmount
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(29, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(514, 30);
-            textBox1.TabIndex = 0;
+            txtAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtAmount.Location = new Point(29, 56);
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(514, 30);
+            txtAmount.TabIndex = 0;
             // 
             // label1
             // 
@@ -72,6 +72,7 @@
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnAccept
             // 
@@ -81,6 +82,7 @@
             btnAccept.TabIndex = 4;
             btnAccept.Text = "Accept";
             btnAccept.UseVisualStyleBackColor = true;
+            btnAccept.Click += btnAccept_Click;
             // 
             // WithdrawForm
             // 
@@ -92,19 +94,19 @@
             Controls.Add(btnCancel);
             Controls.Add(lblError);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtAmount);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "WithdrawForm";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterParent;
-            Text = "WithdrawForm";
+            Text = "Withdraw";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtAmount;
         private Label label1;
         private Label lblError;
         private Button btnCancel;

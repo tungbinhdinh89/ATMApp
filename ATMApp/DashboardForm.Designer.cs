@@ -86,6 +86,7 @@
             Controls.Add(btnWithdraw);
             Controls.Add(btnViewBalance);
             Name = "DashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard | ATM version 1.0";
             Load += DashboardForm_Load;
             ResumeLayout(false);
