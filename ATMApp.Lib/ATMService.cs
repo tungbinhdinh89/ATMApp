@@ -60,6 +60,11 @@ namespace ATMApp.Lib
                 return false;
             }
 
+            if( amount < 0 )
+            {
+                return false;
+            }
+
             currentAccount.Balance -= amount;
 
             currentAccount.Transactions.Add(new AccountTransaction
@@ -68,6 +73,29 @@ namespace ATMApp.Lib
                 Amount = amount,
                 Type = "Withdraw"
             }) ;
+            return true;
+        }
+
+        public bool Deposit(int amount)
+        {
+            if (currentAccount is null)
+            {
+                throw new Exception("No current account found!");
+            }
+
+            if (amount < 0)
+            {
+                return false;
+            }
+
+            currentAccount.Balance += amount;
+
+            currentAccount.Transactions.Add(new AccountTransaction
+            {
+                TransactionDate = DateTime.Now,
+                Amount = amount,
+                Type = "Deposit"
+            });
             return true;
         }
     }

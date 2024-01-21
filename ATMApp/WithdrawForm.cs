@@ -18,8 +18,8 @@ namespace ATMApp
         public WithdrawForm(ATMService atmService)
         {
             this.atmService = atmService;
-            //lblError.Hide();
             InitializeComponent();
+            lblError.Hide();
         }
 
         private async void btnAccept_Click(object sender, EventArgs e)
@@ -36,6 +36,13 @@ namespace ATMApp
                 {
                     //MessageBox.Show("Your balance is small than amount!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lblError.Text = $"Your balance is {atmService.GetCurrentBalance()}";
+                    lblError.Show();
+                }
+
+                if (amount < 0)
+                {
+                    lblError.Text = $"Amount cannot small than 0";
+                    lblError.Show();
                 }
 
                 return;
