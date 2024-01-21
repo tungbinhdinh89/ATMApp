@@ -11,6 +11,7 @@ namespace ATMApp.Lib
     public class ATMService
     {
         private List<Account> accounts = [];
+        private Account? currentAccount = null;
 
         public async Task LoadAccountsAsync(string path)
         {
@@ -22,7 +23,13 @@ namespace ATMApp.Lib
             }
 
             var json = await File.ReadAllTextAsync(path);
-            accounts = JsonSerializer.Deserialize<List<Account>>(json) ?? [];
+            accounts = JsonSerializer.Deserialize<List<Account>>(json, new JsonSerializerOptions(JsonSerializerDefaults.Web)) ?? [];
+        }
+
+        public bool Login(string cardNumber, int pin)
+        {
+            currentAccount = accounts.SingleOrDefault(x => x.AccountNumber == cardNumber && x.Pin == pin);
+            return currentAccount != null;
         }
     }
 }
