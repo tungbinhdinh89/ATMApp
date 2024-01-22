@@ -49,7 +49,7 @@ namespace ATMApp
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-
+            new DepositForm(atmService).ShowDialog();   
         }
     }
 }

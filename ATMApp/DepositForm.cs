@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace ATMApp
 {
-    public partial class WithdrawForm : Form
+    public partial class DepositForm : Form
     {
         private readonly ATMService atmService;
 
-        public WithdrawForm(ATMService atmService)
+        public DepositForm(ATMService atmService)
         {
             this.atmService = atmService;
             InitializeComponent();
@@ -24,27 +24,22 @@ namespace ATMApp
 
         private async void btnAccept_Click(object sender, EventArgs e)
         {
+            
             if (!int.TryParse(txtAmount.Text.Trim(), out var amount))
             {
                 txtAmount.Text = "Amount must be numeric and not empty";
                 return;
             }
 
-            var withdrawSuccess = atmService.Withdraw(amount);
-            if (!withdrawSuccess)
-            {
-                if (atmService.GetCurrentBalance() < amount)
-                {
-                    lblError.Text = $"Your balance is {atmService.GetCurrentBalance()}";
-                    lblError.Show();
-                }
+          var depositSuccess =  atmService.Deposit(amount);
 
+            if (!depositSuccess)
+            {
                 if (amount < 0)
                 {
                     lblError.Text = $"Amount cannot small than 0";
                     lblError.Show();
                 }
-
                 return;
             }
 
