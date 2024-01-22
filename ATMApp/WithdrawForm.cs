@@ -1,13 +1,4 @@
 ﻿using ATMApp.Lib;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ATMApp
 {
@@ -24,9 +15,16 @@ namespace ATMApp
 
         private async void btnAccept_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtAmount.Text.Trim()))
+            {
+                lblError.Text = "Amount not be empty!";
+                lblError.Show();
+                return;
+            }
+
             if (!int.TryParse(txtAmount.Text.Trim(), out var amount))
             {
-                txtAmount.Text = "Amount must be numeric and not empty";
+                lblError.Text = "Amount must be numeric!";
                 return;
             }
 
@@ -36,13 +34,12 @@ namespace ATMApp
                 if (atmService.GetCurrentBalance() < amount)
                 {
                     lblError.Text = $"Your balance is {atmService.GetCurrentBalance()}";
-                    lblError.Show();
                 }
 
-                if (amount < 0)
+                if (amount <= 0)
                 {
-                    lblError.Text = $"Amount cannot small than 0";
-                    lblError.Show();
+                    lblError.Text = $"Amount cannot small than 0!";
+
                 }
 
                 return;

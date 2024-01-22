@@ -34,7 +34,7 @@ namespace ATMApp
 
         private void btnShowTransactions_Click(object sender, EventArgs e)
         {
-
+            new TransactionForm(atmService).ShowDialog();
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
@@ -49,7 +49,12 @@ namespace ATMApp
 
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            new DepositForm(atmService).ShowDialog();   
+            new DepositForm(atmService).ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

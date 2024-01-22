@@ -28,18 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            lvTransactions = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             btnClose = new Button();
             SuspendLayout();
             // 
-            // listView1
+            // lvTransactions
             // 
-            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listView1.Location = new Point(12, 12);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(776, 376);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lvTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lvTransactions.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            lvTransactions.GridLines = true;
+            lvTransactions.Location = new Point(12, 12);
+            lvTransactions.Name = "lvTransactions";
+            lvTransactions.Size = new Size(776, 376);
+            lvTransactions.TabIndex = 0;
+            lvTransactions.UseCompatibleStateImageBehavior = false;
+            lvTransactions.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Transaction Date";
+            columnHeader1.Width = 400;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Amount";
+            columnHeader2.Width = 220;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Type";
+            columnHeader3.Width = 150;
             // 
             // btnClose
             // 
@@ -50,6 +71,7 @@
             btnClose.TabIndex = 1;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // TransactionForm
             // 
@@ -58,7 +80,7 @@
             ClientSize = new Size(800, 451);
             ControlBox = false;
             Controls.Add(btnClose);
-            Controls.Add(listView1);
+            Controls.Add(lvTransactions);
             Name = "TransactionForm";
             Text = "TransactionForm";
             ResumeLayout(false);
@@ -66,7 +88,10 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView lvTransactions;
         private Button btnClose;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }

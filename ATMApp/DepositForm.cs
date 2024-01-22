@@ -24,21 +24,27 @@ namespace ATMApp
 
         private async void btnAccept_Click(object sender, EventArgs e)
         {
-            
-            if (!int.TryParse(txtAmount.Text.Trim(), out var amount))
+
+            if (string.IsNullOrWhiteSpace(txtAmount.Text.Trim()))
             {
-                txtAmount.Text = "Amount must be numeric and not empty";
+                lblError.Text = "Amount not be empty!";
+                lblError.Show();
                 return;
             }
 
-          var depositSuccess =  atmService.Deposit(amount);
+            if (!int.TryParse(txtAmount.Text.Trim(), out var amount))
+            {
+                lblError.Text = "Amount must be numeric!";
+                return;
+            }
+
+            var depositSuccess =  atmService.Deposit(amount);
 
             if (!depositSuccess)
             {
-                if (amount < 0)
+                if (amount <= 0)
                 {
                     lblError.Text = $"Amount cannot small than 0";
-                    lblError.Show();
                 }
                 return;
             }

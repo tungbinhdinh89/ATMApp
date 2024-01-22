@@ -24,6 +24,11 @@ namespace ATMApp.Lib
             return currentAccount!.Balance ;
         }
 
+        public List<AccountTransaction> GetCurrentTransaction()
+        {
+            return currentAccount!.Transactions;
+        }
+
         public async Task LoadAccountsAsync(string path)
         {
             ArgumentNullException.ThrowIfNullOrWhiteSpace(path);
@@ -60,7 +65,7 @@ namespace ATMApp.Lib
                 return false;
             }
 
-            if( amount < 0 )
+            if( amount <= 0 )
             {
                 return false;
             }
@@ -83,7 +88,7 @@ namespace ATMApp.Lib
                 throw new Exception("No current account found!");
             }
 
-            if (amount < 0)
+            if (amount <= 0)
             {
                 return false;
             }

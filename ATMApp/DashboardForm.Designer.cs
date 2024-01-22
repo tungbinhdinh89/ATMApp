@@ -33,6 +33,7 @@
             btnShowTransactions = new Button();
             lblUserName = new Label();
             btnDeposit = new Button();
+            btnClose = new Button();
             SuspendLayout();
             // 
             // btnViewBalance
@@ -88,11 +89,23 @@
             btnDeposit.UseVisualStyleBackColor = true;
             btnDeposit.Click += btnDeposit_Click;
             // 
+            // btnClose
+            // 
+            btnClose.Location = new Point(391, 406);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(75, 32);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 450);
+            ControlBox = false;
+            Controls.Add(btnClose);
             Controls.Add(btnDeposit);
             Controls.Add(lblUserName);
             Controls.Add(btnShowTransactions);
@@ -113,5 +126,6 @@
         private Button btnShowTransactions;
         private Label lblUserName;
         private Button btnDeposit;
+        private Button btnClose;
     }
 }
