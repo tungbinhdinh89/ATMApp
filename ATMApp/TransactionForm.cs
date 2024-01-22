@@ -20,6 +20,10 @@ namespace ATMApp
         {
             this.atmService = atmService;
             InitializeComponent();
+        }
+
+        private void TransactionForm_Load(object sender, EventArgs e)
+        {
             LoadDataToListView(atmService.GetCurrentTransaction());
         }
 

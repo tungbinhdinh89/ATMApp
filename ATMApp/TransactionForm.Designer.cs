@@ -83,6 +83,7 @@
             Controls.Add(lvTransactions);
             Name = "TransactionForm";
             Text = "TransactionForm";
+            Load += TransactionForm_Load;
             ResumeLayout(false);
         }
 

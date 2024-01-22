@@ -81,14 +81,15 @@
             txtAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtAmount.Location = new Point(29, 55);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(290, 30);
+            txtAmount.Size = new Size(313, 30);
             txtAmount.TabIndex = 5;
             // 
             // DepositForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(576, 173);
+            ClientSize = new Size(599, 192);
+            ControlBox = false;
             Controls.Add(btnAccept);
             Controls.Add(btnCancel);
             Controls.Add(lblError);

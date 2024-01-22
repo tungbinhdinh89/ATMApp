@@ -40,7 +40,7 @@
             txtAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtAmount.Location = new Point(29, 56);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(514, 30);
+            txtAmount.Size = new Size(540, 30);
             txtAmount.TabIndex = 0;
             // 
             // label1
@@ -88,7 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(576, 173);
+            ClientSize = new Size(602, 191);
             ControlBox = false;
             Controls.Add(btnAccept);
             Controls.Add(btnCancel);

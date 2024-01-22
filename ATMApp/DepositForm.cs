@@ -35,6 +35,7 @@ namespace ATMApp
             if (!int.TryParse(txtAmount.Text.Trim(), out var amount))
             {
                 lblError.Text = "Amount must be numeric!";
+                lblError.Show();
                 return;
             }
 
@@ -45,10 +46,12 @@ namespace ATMApp
                 if (amount <= 0)
                 {
                     lblError.Text = $"Amount cannot small than 0";
+                    lblError.Show();
                 }
                 return;
             }
 
+            MessageBox.Show("Deposit Success", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             await atmService.WriteAccountAsync(Constants.BANK_PATH);
             Close();
         }
